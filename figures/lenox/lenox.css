@@ -1,0 +1,16 @@
+.lx-stage{touch-action:pan-y;cursor:grab;outline:none;border-radius:8px}
+.lx-stage:focus-visible{outline:1px solid var(--anatomy-muted);outline-offset:6px}
+.lx-stage[data-drag]{cursor:grabbing}
+.lx-globe{--lx-land:color-mix(in srgb,var(--anatomy-lo) 34%,transparent)}
+.iso[data-theme="light"] .lx-globe{--lx-land:color-mix(in srgb,var(--anatomy-mid) 22%,transparent)}
+.lx-land{fill:var(--lx-land);stroke:none;fill-rule:nonzero}
+.lx-parallel{stroke-dasharray:none}
+/* Water columns: the figure's own inks pulled toward a cool slate, never saturated. */
+.iso-live [data-name^="w."]{--lx-w:#8fa6b8;--anatomy-top:color-mix(in srgb,var(--lx-w) 40%,#fff);--tn-0:color-mix(in srgb,var(--lx-w) 30%,var(--anatomy-shade-0));--tn-1:color-mix(in srgb,var(--lx-w) 30%,var(--anatomy-shade-1));--tn-2:color-mix(in srgb,var(--lx-w) 30%,var(--anatomy-shade-2));--tn-3:color-mix(in srgb,var(--lx-w) 30%,var(--anatomy-shade-3))}
+.iso[data-theme="dark"] .iso-live [data-name^="w."]{--lx-w:#2f4656;--anatomy-top:color-mix(in srgb,var(--lx-w) 70%,#1c1c1c)}
+/* Land columns: a quiet hypsometric tint on the tops, valley sage up to ridge paper. */
+.iso-live [data-name^="c."]{--lx-low:#d9e2cf;--lx-high:#ffffff;--anatomy-top:color-mix(in srgb,var(--lx-high) calc(var(--lx-t,50) * 1%),var(--lx-low))}
+.iso[data-theme="dark"] .iso-live [data-name^="c."]{--lx-low:#1c251c;--lx-high:#424242}
+/* The column under the pointer. */
+.iso-live [data-hover]{--anatomy-top:var(--anatomy-lit-top);--tn-3:var(--anatomy-lit-shade);--tn-2:var(--anatomy-lit-shade);--tn-1:var(--anatomy-lit-shade);--tn-0:var(--anatomy-lit-shade)}
+.iso-live [data-hover] .iso-edge,.iso-live [data-hover] [class*="edge"]{stroke:var(--anatomy-lit)}
